@@ -2,12 +2,13 @@ import requests
 from webbrowser import get
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Job
+from .models import Job, Header
 
 
 def home(request):
+    headers = Header.objects
     jobs = Job.objects
-    return render(request, 'jobs/home.html', {'jobs':jobs})
+    return render(request, 'jobs/home.html', {'jobs':jobs, 'headers':headers})
 
 def detail(request, job_id):
     job_detail = get_object_or_404(Job, pk=job_id)
