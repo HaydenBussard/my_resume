@@ -123,16 +123,18 @@
 <main>
 
   <section class="py-5 text-center container">
+    {% for header in headers.all %}
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Hayden Bussard</h1>
-        <p class="lead text-muted">I am a Mechanical Engineer for Westinghouse Electric Company. Outside of my work, I enjoy pursuing endless education. I am currently learning how to write in Python so I can apply my predictive analytics knowledge to automated programs.</p>
+        <h1 class="fw-light">{{ header.name }}</h1>
+        <p class="lead text-muted">{{ header.summary }}</p>
         <p>
           <a href="mailto:haydenbussard@outlook.com" class="btn btn-primary my-2">Email Me!</a>
         </p>
-        <img src="{% static 'headshot.jpg'%}" height = 300></img>
+        <img src="{{ header.image.url }}" height = 300></img>
       </div>
     </div>
+    {% endfor %}
   </section>
 
 
