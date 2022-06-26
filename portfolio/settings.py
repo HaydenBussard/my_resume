@@ -90,6 +90,20 @@ DATABASES = {
 }
 
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'portfoliodb',
+        'USER': 'postgres',
+        'PASSWORD': 'portfolio',
+        'DATABASE_URL': 'postgres://tfyrbyxrcpjtor:89e23c8b8dffc6a87603bee6a063343a828afa8374331a93001eda5d39e8e68c@ec2-44-205-41-76.compute-1.amazonaws.com:5432/da1r2kbvrqope1',
+        'PAPERTRAIL_API_TOKEN': 'SM5UTV2c5s4Uz3FW7b6D',
+        'HOST': 'localhost', 
+        'PORT': '5432',
+    }
+}
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
