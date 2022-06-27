@@ -122,7 +122,7 @@
           <h4 class="text-white">Contact</h4>
           <ul class="list-unstyled">
             <li><a href="tel:412-722-7076" class="text-white">Call Me</a><a class="text-white"> | </a><a href="sms:412-722-7076" class="text-white">Text Me</a></li>
-            <li><a href="mailto:haydenbussard@outlook.com" class="text-white">Email Me</a></li>
+            <li><a href="mailto:haydenbussard@outlook.com" class="text-white">Email</a></li>
             <li><a href="https://www.linkedin.com/in/haydenbussard" class="text-white">LinkedIn</a></li>
           </ul>
         </div>
@@ -145,24 +145,24 @@
   {% comment %}  END TOOLBAR CODE  {% endcomment %}
 
 <main>
-
   <section class="py-5 text-center container">
-    {% for header in headers.all %}
+    {% for school in school.all %}
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">{{ header.name }}</h1>
-        <p class="lead text-muted">{{ header.summary }}</p>
+        <h1 class="fw-light">{{ school.title }}</h1>
+        {% comment %} <h1 class="fw-light">fuuuuuuuck</h1> {% endcomment %}
+        <p class="lead text-muted">{{ school.summary }}</p>
         {% comment %} <p>
           <a href="mailto:haydenbussard@outlook.com" class="btn btn-primary my-2">Email Me!</a>
         </p> {% endcomment %}
       <p class="image-border"> 
-        <img src="{{ header.image.url }}" height = 300></img>
+        <img src="{{ school.image.url }}" height = 300></img>
       </p>
-        <div class='buttons'>
-          <a href="{% url 'career' %}" class="btn btn-primary my-2">Career</a>
-          <a href="{% url 'school' %}" class="btn btn-primary my-2">Education</a>
-          <a href="{% url 'me' %}" class="btn btn-primary my-2">Personal Life</a>
-          </div>
+      <div class='buttons-justify'>
+        {% comment %} <a href="{% url 'career' %}" class="btn btn-primary my-2">Career</a> {% endcomment %}
+        <a href="{% url 'home' %}" class="btn btn-primary my-2">Back</a>
+        {% comment %} <a href="{% url 'me' %}" class="btn btn-primary my-2">Personal Life</a> {% endcomment %}
+    </div>
       </div>
     </div>
     {% endfor %}

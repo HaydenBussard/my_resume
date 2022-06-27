@@ -122,7 +122,7 @@
           <h4 class="text-white">Contact</h4>
           <ul class="list-unstyled">
             <li><a href="tel:412-722-7076" class="text-white">Call Me</a><a class="text-white"> | </a><a href="sms:412-722-7076" class="text-white">Text Me</a></li>
-            <li><a href="mailto:haydenbussard@outlook.com" class="text-white">Email Me</a></li>
+            <li><a href="mailto:haydenbussard@outlook.com" class="text-white">Email</a></li>
             <li><a href="https://www.linkedin.com/in/haydenbussard" class="text-white">LinkedIn</a></li>
           </ul>
         </div>
@@ -143,26 +143,24 @@
 </header>
 
   {% comment %}  END TOOLBAR CODE  {% endcomment %}
-  
+
 <main>
-    <h1>FUCK</h1>
     <section class="py-5 text-center container">
-        {% for header in headers.all %}
+        {% for me in me.all %}
      <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
-        {% comment %} <h1 class="fw-light">{{ header.name }}</h1> {% endcomment %}
-            <h1 class="fw-light">fuck</h1>
-                <p class="lead text-muted">{{ header.summary }}</p>
+        <h1 class="fw-light">{{ me.title }}</h1>
+                <p class="lead text-muted">{{ me.summary }}</p>
         {% comment %} <p>
           <a href="mailto:haydenbussard@outlook.com" class="btn btn-primary my-2">Email Me!</a>
         </p> {% endcomment %}
                     <p class="image-border"> 
-                        <img src="{{ header.image.url }}" height = 300></img>
+                        <img src="{{ me.image.url }}" height = 300></img>
                     </p>
-                <div class='buttons'>
-                    <a href="{% url 'career' %}" class="btn btn-primary my-2">Career</a>
-                    <a href="{% url 'school' %}" class="btn btn-primary my-2">Education</a>
-                    <a href="{% url 'me' %}" class="btn btn-primary my-2">Personal Life</a>
+                <div class='buttons-justify'>
+                    {% comment %} <a href="{% url 'career' %}" class="btn btn-primary my-2">Career</a> {% endcomment %}
+                    <a href="{% url 'home' %}" class="btn btn-primary my-2">Back</a>
+                    {% comment %} <a href="{% url 'me' %}" class="btn btn-primary my-2">Personal Life</a> {% endcomment %}
                 </div>
             </div>
         </div>
@@ -170,47 +168,48 @@
     </section>
 
 
-  <div class="album py-5 bg-light">
-    <div class="container">
-
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
-  {% comment %}  THIS IS WHERE WE DELETED THE OTHER ITERATIONS OF THE CARDS  {% endcomment %}
-
-        {% for job in jobs.all %}
-
-        <div class="col">
-          <div class="card shadow-sm">
-                <img class="card-img-top" width="100%" height="100%" src="{{ job.image.url }}"></img>
-            <div class="card-body">
-              <p class="card-text">{{ job.summary }}</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="{% url 'detail' job.id %}">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  {% comment %} <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> {% endcomment %}
-                  </a>
+    <div class="album py-5 bg-light">
+        <div class="container">
+    
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    
+      {% comment %}  THIS IS WHERE WE DELETED THE OTHER ITERATIONS OF THE CARDS  {% endcomment %}
+    
+            {% for job in jobs.all %}
+    
+            <div class="col">
+              <div class="card shadow-sm">
+                    <img class="card-img-top" width="100%" height="100%" src="{{ job.image.url }}"></img>
+                <div class="card-body">
+                  <p class="card-text">{{ job.summary }}</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="{% url 'detail' job.id %}">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      {% comment %} <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> {% endcomment %}
+                      </a>
+                    </div>
+                    {% comment %} <small class="text-muted">9 mins</small> {% endcomment %}
+                  </div>
                 </div>
-                {% comment %} <small class="text-muted">9 mins</small> {% endcomment %}
               </div>
             </div>
+    
+            {% endfor %}
+      {% comment %}  THIS IS THERE THE COMPLETE ITERATIONS END  {% endcomment %}
           </div>
         </div>
-
-        {% endfor %}
-  {% comment %}  THIS IS THERE THE COMPLETE ITERATIONS END  {% endcomment %}
       </div>
-    </div>
-  </div>
-
-</main>
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
-    {% comment %} <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> {% endcomment %}
-
-      
-</body>
-</html>
+    
+    </main>
+    
+    
+    
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+        {% comment %} <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> {% endcomment %}
+    
+          
+      </body>
+    </html>
+    
