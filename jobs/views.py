@@ -2,7 +2,7 @@ import requests
 from webbrowser import get
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Job, Header
+from .models import Job, Header, Work, School, Me
 
 
 def home(request):
@@ -13,6 +13,18 @@ def home(request):
 def detail(request, job_id):
     job_detail = get_object_or_404(Job, pk=job_id)
     return render(request, 'jobs/detail.html', {'job':job_detail})
+
+def career(request):
+    career_detail = Work.objects
+    return render(request, 'jobs/career.html', {'career':career_detail})
+
+def education(request):
+    school_detail = School.objects
+    return render(request, 'jobs/education.html', {'school':school_detail})
+
+def mylife(request):
+    me_detail = Me.objects
+    return render(request, 'jobs/mylife.html', {'me':me_detail})
 
 # def index(request):
 #     jobs = Job.objects

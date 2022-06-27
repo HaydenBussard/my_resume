@@ -150,7 +150,8 @@
     {% for header in headers.all %}
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">{{ header.name }}</h1>
+        {% comment %} <h1 class="fw-light">{{ header.name }}</h1> {% endcomment %}
+        <h1 class="fw-light">CAREER</h1>
         <p class="lead text-muted">{{ header.summary }}</p>
         {% comment %} <p>
           <a href="mailto:haydenbussard@outlook.com" class="btn btn-primary my-2">Email Me!</a>
