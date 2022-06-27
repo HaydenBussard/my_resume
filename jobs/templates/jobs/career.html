@@ -159,11 +159,11 @@
       <p class="image-border"> 
         <img src="{{ header.image.url }}" height = 300></img>
       </p>
-        <div class='buttons'>
-          <a href="#" class="btn btn-primary my-2">Career</a>
-          <a href="#" class="btn btn-primary my-2">Education</a>
-          <a href="#" class="btn btn-primary my-2">Personal Life</a>
-          </div>
+      <div class='buttons'>
+        <a href="{% url 'career' %}" class="btn btn-primary my-2">Career</a>
+        <a href="{% url 'education' %}" class="btn btn-primary my-2">Education</a>
+        <a href="{% url 'me' %}" class="btn btn-primary my-2">Personal Life</a>
+        </div>
       </div>
     </div>
     {% endfor %}
