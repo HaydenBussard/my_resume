@@ -146,16 +146,16 @@
 
 <main>
     <section class="py-5 text-center container">
-        {% for me in me.all %}
+        {% for me_head in me_head.all %}
      <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">{{ me.title }}</h1>
-                <p class="lead text-muted">{{ me.summary }}</p>
+        <h1 class="fw-light">{{ me_head.title }}</h1>
+                <p class="lead text-muted">{{ me_head.summary }}</p>
         {% comment %} <p>
           <a href="mailto:haydenbussard@outlook.com" class="btn btn-primary my-2">Email Me!</a>
         </p> {% endcomment %}
                     <p class="image-border"> 
-                        <img src="{{ me.image.url }}" height = 300></img>
+                        <img src="{{ me_head.image.url }}" height = 300></img>
                     </p>
                 <div class='buttons-justify'>
                     {% comment %} <a href="{% url 'career' %}" class="btn btn-primary my-2">Career</a> {% endcomment %}
@@ -175,16 +175,16 @@
     
       {% comment %}  THIS IS WHERE WE DELETED THE OTHER ITERATIONS OF THE CARDS  {% endcomment %}
     
-            {% for job in jobs.all %}
+            {% for me in me.all %}
     
             <div class="col">
               <div class="card shadow-sm">
-                    <img class="card-img-top" width="100%" height="100%" src="{{ job.image.url }}"></img>
+                    <img class="card-img-top" width="100%" height="100%" src="{{ me.image.url }}"></img>
                 <div class="card-body">
-                  <p class="card-text">{{ job.summary }}</p>
+                  <p class="card-text">{{ me.summary }}</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <a href="{% url 'detail' job.id %}">
+                      <a href="{% url 'detail' me.id %}">
                       <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                       {% comment %} <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> {% endcomment %}
                       </a>

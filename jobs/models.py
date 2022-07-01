@@ -36,3 +36,27 @@ class Me(models.Model):
     
     def __str__(self):
         return self.title
+    
+class Work_Head(models.Model):
+    image = models.ImageField(upload_to='images/')
+    summary = models.CharField(max_length=400)
+    title = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.title
+    
+class School_Head(models.Model):
+    image = models.ImageField(upload_to='images/')
+    summary = models.CharField(max_length=400)
+    title = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.title
+    
+class Me_Head(models.Model):
+    image = models.ImageField(upload_to='images/')
+    summary = models.CharField(max_length=400)
+    title = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.title

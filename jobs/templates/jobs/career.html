@@ -143,7 +143,7 @@
 <main>
 
   <section class="py-5 text-center container">
-    {% for career in career.all %}
+    {% for career in career_head.all %}
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-light">{{ career.title }}</h1>
@@ -172,16 +172,16 @@
 
   {% comment %}  THIS IS WHERE WE DELETED THE OTHER ITERATIONS OF THE CARDS  {% endcomment %}
 
-        {% for job in jobs.all %}
+        {% for career in career.all %}
 
         <div class="col">
           <div class="card shadow-sm">
-                <img class="card-img-top" width="100%" height="100%" src="{{ job.image.url }}"></img>
+                <img class="card-img-top" width="100%" height="100%" src="{{ career.image.url }}"></img>
             <div class="card-body">
-              <p class="card-text">{{ job.summary }}</p>
+              <p class="card-text">{{ career.summary }}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a href="{% url 'detail' job.id %}">
+                  <a href="{% url 'detail' career.id %}">
                   <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                   {% comment %} <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> {% endcomment %}
                   </a>
