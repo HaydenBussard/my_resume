@@ -16,27 +16,18 @@ def detail(request, job_id):
 
 def career(request):
     career_detail = Work.objects
-    return render(request, 'jobs/career.html', {'career':career_detail})
+    career_head_detail = Work_Head.objects
+    return render(request, 'jobs/career.html', {'career':career_detail, 'career_head':career_head_detail})
 
 def education(request):
     school_detail = School.objects
-    return render(request, 'jobs/education.html', {'school':school_detail})
+    school_head_detail = School_Head.objects
+    return render(request, 'jobs/education.html', {'school':school_detail, 'school_head':school_head_detail})
 
 def mylife(request):
     me_detail = Me.objects
-    return render(request, 'jobs/mylife.html', {'me':me_detail})
-
-def career_head(request):
-    career_head_detail = Work_Head.objects
-    return render(request, 'jobs/career.html', {'career_head':career_head_detail})
-
-def education_head(request):
-    school_head_detail = School_Head.objects
-    return render(request, 'jobs/education.html', {'school_head':school_head_detail})
-
-def mylife_head(request):
     me_head_detail = Me_Head.objects
-    return render(request, 'jobs/mylife.html', {'me_head':me_head_detail})
+    return render(request, 'jobs/mylife.html', {'me':me_detail, 'me_head':me_head_detail})
 
 # def index(request):
 #     jobs = Job.objects

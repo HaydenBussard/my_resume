@@ -146,17 +146,17 @@
 
 <main>
   <section class="py-5 text-center container">
-    {% for head in school_head.all %}
+    {% for school in school_head.all %}
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">{{ head.title }}</h1>
+        <h1 class="fw-light">{{ school_head.title }}</h1>
         {% comment %} <h1 class="fw-light">fuuuuuuuck</h1> {% endcomment %}
-        <p class="lead text-muted">{{ head.summary }}</p>
+        <p class="lead text-muted">{{ school_head.summary }}</p>
         {% comment %} <p>
           <a href="mailto:haydenbussard@outlook.com" class="btn btn-primary my-2">Email Me!</a>
         </p> {% endcomment %}
       <p class="image-border"> 
-        <img src="{{ head.image.url }}" height = 300></img>
+        <img src="{{ school_head.image.url }}" height = 300></img>
       </p>
       <div class='buttons-justify'>
         {% comment %} <a href="{% url 'career' %}" class="btn btn-primary my-2">Career</a> {% endcomment %}
